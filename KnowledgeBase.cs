@@ -5,66 +5,103 @@ namespace CybersecurityAwarenessBot
 {
     public class KnowledgeBase
     {
-        // Stores cybersecurity topics and their explanations
         public Dictionary<string, string> Topics { get; private set; }
-
-        // Stores small talk responses to make the bot more engaging
         public Dictionary<string, string> SmallTalk { get; private set; }
+        public List<QuizQuestion> QuizQuestions { get; } = new List<QuizQuestion>
+        {
+            new QuizQuestion(
+                "What should you do if you receive an email asking for your password?",
+                new List<string> { "Reply with your password", "Delete the email", "Report the email as phishing", "Ignore it" },
+                2,
+                "Correct! Reporting phishing emails helps prevent scams.",
+                "Never share passwords via email - this is always a scam!"),
 
-        // User's name for personalized responses
+            new QuizQuestion(
+                "A strong password should:",
+                new List<string> { "Contain your pet's name", "Be at least 12 characters with symbols", "Be written on a sticky note", "Use 'password123'" },
+                1,
+                "Great! Complex passwords are harder to crack.",
+                "Short/simple passwords can be guessed in seconds by hackers."),
+
+            new QuizQuestion(
+                "Public Wi-Fi networks are always safe for online banking.",
+                new List<string> { "True", "False" },
+                1,
+                "Right! Public Wi-Fi can be intercepted by hackers.",
+                "Always use a VPN or mobile data for sensitive transactions."),
+
+            new QuizQuestion(
+                "Two-factor authentication (2FA) is:",
+                new List<string> { "An unnecessary extra step", "Only for important accounts", "A second verification method for logins", "The same as a password manager" },
+                2,
+                "Exactly! 2FA adds an extra security layer.",
+                "2FA requires both something you know (password) and something you have (phone)."),
+
+            new QuizQuestion(
+                "Someone calls claiming to be from Microsoft support asking to remote into your computer. You should:",
+                new List<string> { "Let them help fix your computer", "Provide your credit card for verification", "Hang up immediately", "Give them your email password" },
+                2,
+                "Good job! This is a common tech support scam.",
+                "Legitimate companies will never call unsolicited for remote access."),
+
+            new QuizQuestion(
+                "Software updates should be installed:",
+                new List<string> { "Only when you have time", "Immediately when available", "Never - they break things", "Only for operating systems" },
+                1,
+                "Correct! Updates often contain critical security patches.",
+                "Delaying updates leaves you vulnerable to known exploits."),
+
+            new QuizQuestion(
+                "How can you check if a link is safe before clicking?",
+                new List<string> { "Hover to see the real URL", "Ask the sender if it's safe", "Click it to test", "All links are safe" },
+                0,
+                "Right! Hovering reveals the true destination.",
+                "Even links from friends can be compromised."),
+
+            new QuizQuestion(
+                "How often should you backup important files?",
+                new List<string> { "Never - cloud storage is enough", "Only after a ransomware attack", "Regularly (at least monthly)", "Once when you buy a computer" },
+                2,
+                "Perfect! Regular backups prevent data loss.",
+                "The 3-2-1 rule: 3 copies, 2 media types, 1 offsite."),
+
+            new QuizQuestion(
+                "What's the first sign of a SIM swap attack?",
+                new List<string> { "Your phone gets hotter", "You lose cellular service suddenly", "Your battery drains faster", "You get more spam calls" },
+                1,
+                "Yes! Unexpected loss of service is the key indicator.",
+                "Contact your carrier immediately if this happens."),
+
+            new QuizQuestion(
+                "Password managers are:",
+                new List<string> { "Less secure than reusing passwords", "Only for tech experts", "A secure way to store unique passwords", "Too expensive to use" },
+                2,
+                "Correct! They generate and store strong passwords for you.",
+                "Modern password managers use strong encryption.")
+        };
+
         private readonly string _userName;
 
-        // Constructor initializes the knowledge base with the user's name
         public KnowledgeBase(string userName)
         {
             _userName = userName;
-            InitializeTopics();     // Load cybersecurity topic responses
-            InitializeSmallTalk();  // Load small talk conversation options
+            InitializeTopics();
+            InitializeSmallTalk();
         }
 
-        /// <summary>
-        /// Populates the Topics dictionary with educational content about common cyber threats,
-        /// including local South African examples like fake SARS and SIM swap scams.
-        /// </summary>
         private void InitializeTopics()
         {
             Topics = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
             {
-                { "phishing",
-                  "Phishing is a cyber attack where attackers impersonate trustworthy entities, " +
-                  "like banks or government services, to steal your personal information such as passwords and credit card numbers. " +
-                  "Always check the sender's email address and avoid clicking suspicious links."
-                },
-                { "password safety",
-                  "Password safety means creating strong passwords that are at least 12 characters long, " +
-                  "including uppercase, lowercase letters, numbers, and special characters. " +
-                  "Avoid reusing passwords and enable two-factor authentication whenever possible."
-                },
-                { "safe browsing",
-                  "Safe browsing involves using updated browsers, avoiding suspicious websites, " +
-                  "not clicking unknown links or ads, and being cautious when downloading files. " +
-                  "Using HTTPS sites and a reputable antivirus program can help protect you online."
-                },
-                { "fake sars",
-                  "Fake SARS scams involve fraudulent emails, SMS, or calls pretending to be from the South African Revenue Service. " +
-                  "They often ask for personal details or payments. Always verify any SARS communication by contacting SARS directly through official channels."
-                },
-                { "sim swap scams",
-                  "SIM swap scams happen when criminals trick mobile operators into transferring your phone number to a new SIM. " +
-                  "This can allow them to intercept SMS-based two-factor authentication codes and access your accounts. " +
-                  "Be alert to sudden loss of phone signal and notify your provider immediately if this happens."
-                },
-                { "whatsapp scams",
-                  "WhatsApp scams often involve messages from unknown contacts asking for money or personal info, sometimes pretending to be family members. " +
-                  "Never send money or share sensitive data without verifying the request independently."
-                }
+                { "phishing", "Phishing is a cyber attack where attackers impersonate trustworthy entities to steal personal information like passwords and credit card numbers. Always check the sender's email address and avoid clicking suspicious links." },
+                { "password safety", "Password safety means creating strong passwords that are at least 12 characters long, including uppercase, lowercase letters, numbers, and special characters. Avoid reusing passwords and enable two-factor authentication." },
+                { "safe browsing", "Safe browsing involves using updated browsers, avoiding suspicious websites, not clicking unknown links or ads, and being cautious when downloading files. Using HTTPS sites and a reputable antivirus program helps protection." },
+                { "fake sars", "Fake SARS scams involve fraudulent emails, SMS, or calls pretending to be from the South African Revenue Service. They often ask for personal details or payments. Always verify through official SARS channels." },
+                { "sim swap scams", "SIM swap scams happen when criminals trick mobile operators into transferring your phone number to a new SIM. This lets them intercept SMS-based two-factor authentication codes. Be alert to sudden loss of phone signal." },
+                { "whatsapp scams", "WhatsApp scams often involve messages from unknown contacts asking for money or personal info, sometimes pretending to be family members. Never send money or share sensitive data without independent verification." }
             };
         }
 
-        /// <summary>
-        /// Populates the SmallTalk dictionary with casual conversation responses
-        /// to make the chatbot more friendly and interactive.
-        /// </summary>
         private void InitializeSmallTalk()
         {
             SmallTalk = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
@@ -76,6 +113,25 @@ namespace CybersecurityAwarenessBot
                 { "thanks", "You're welcome! Stay safe out there." },
                 { "thank you", "Happy to help! Let me know if you want to learn about anything else." }
             };
+        }
+    }
+
+    public class QuizQuestion
+    {
+        public string Question { get; }
+        public List<string> Options { get; }
+        public int CorrectAnswerIndex { get; }
+        public string CorrectFeedback { get; }
+        public string IncorrectFeedback { get; }
+
+        public QuizQuestion(string question, List<string> options, int correctIndex,
+                          string correctFeedback, string incorrectFeedback)
+        {
+            Question = question;
+            Options = options;
+            CorrectAnswerIndex = correctIndex;
+            CorrectFeedback = correctFeedback;
+            IncorrectFeedback = incorrectFeedback;
         }
     }
 }

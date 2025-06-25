@@ -7,65 +7,46 @@ namespace CybersecurityAwarenessBot
 {
     public class InputProcessor
     {
-        // Dependencies
         private readonly KnowledgeBase _knowledge;
         private readonly IResponseRenderer _renderer;
         private readonly AudioService _audioService;
         private readonly string _userName;
 
-        // Conversation state
         private string _lastTopic = string.Empty;
         private string _favoriteTopic = string.Empty;
         private readonly List<CyberTask> _tasks = new List<CyberTask>();
+        public QuizGame QuizGame { get; }
 
-        // Knowledge collections
+        // Jokes collection
         private readonly List<string> _jokes = new List<string>
         {
             "Why did the hacker break up with the internet? Too many insecure connections.",
             "Why don't hackers take vacations? Because they prefer to work on phishing trips.",
             "I changed my password to 'incorrect' so whenever I forget it, the computer says: 'Your password is incorrect.'",
-            "Why was the computer cold? It left its Windows open.",
-            "What do you call a hacker who uses Google? A search-and-destroy specialist."
+            "Why was the computer cold? It left its Windows open."
         };
 
-        private readonly Dictionary<string, string> _topicFollowUps = new Dictionary<string, string>
-        {
-            { "password", "Use two-factor authentication (2FA) wherever possible. Avoid '123456' or 'password' as passwords!" },
-            { "scam", "Watch out for poor grammar, urgent messages, or requests for money. Always double-check with the source." },
-            { "privacy", "Be cautious with app permissions and browser extensions. Less is more when it comes to sharing data." },
-            { "phishing", "Phishing happens via email, text, or phone. If something feels off, don't click anything!" },
-            { "malware", "Avoid downloading from shady websites. Keep antivirus software updated." }
-        };
-
+        // Keyword responses
         private readonly Dictionary<string, string> _keywordResponses = new Dictionary<string, string>
         {
             { "malware", "Malware is malicious software like viruses, ransomware, or spyware. It can steal or destroy your data!" },
             { "password", "Strong passwords matter! Use at least 12 characters with symbols, numbers, and uppercase letters." },
-            { "scam", "Online scams trick people into giving up info or money. Always double-check before clicking." },
-            { "privacy", "Protect your personal data online. Avoid oversharing and use privacy settings on social media." },
             { "phishing", "Phishing attempts often pretend to be from trusted sources. Never click suspicious links!" }
         };
 
+        // Sentiment responses
         private readonly Dictionary<string, string> _sentimentResponses = new Dictionary<string, string>
         {
             { "worried", "It's completely understandable to feel that way. Scammers can be very convincing. Let me share some tips to help you stay safe." },
-            { "frustrated", "I'm sorry you're feeling frustrated. Cybersecurity can feel overwhelming, but I'm here to help simplify it." },
-            { "anxious", "Cyber threats can be scary, but you're taking the right step by learning more. Let's go at your pace." }
+            { "frustrated", "I'm sorry you're feeling frustrated. Cybersecurity can feel overwhelming, but I'm here to help simplify it." }
         };
 
+        // Casual responses
         private readonly Dictionary<string, string> _casualResponses = new Dictionary<string, string>
         {
             { "hello", "Hello there! How can I assist you with cybersecurity today?" },
             { "hi", "Hi! What would you like to learn about today?" },
-            { "hey", "Hey! Ready to boost your cyber-awareness?" },
             { "how are you", "I'm just code, but I'm running great! How can I help you stay safe online?" }
-        };
-
-        private readonly List<string> _phishingTips = new List<string>
-        {
-            "Be cautious of emails asking for personal information. Scammers often disguise themselves as trusted organisations.",
-            "Hover over links to see the real URL before clicking. If it looks suspicious, don't touch it!",
-            "Never download attachments from unknown senders. They could contain malware."
         };
 
         public InputProcessor(KnowledgeBase knowledge, IResponseRenderer renderer, AudioService audioService, string userName)
@@ -74,9 +55,8 @@ namespace CybersecurityAwarenessBot
             _renderer = renderer ?? throw new ArgumentNullException(nameof(renderer));
             _audioService = audioService ?? throw new ArgumentNullException(nameof(audioService));
             _userName = userName ?? string.Empty;
+            QuizGame = new QuizGame(renderer, knowledge.QuizQuestions);
         }
-
-        public List<CyberTask> Tasks => _tasks;
 
         public bool ProcessInput(string input)
         {
@@ -93,6 +73,13 @@ namespace CybersecurityAwarenessBot
 
             // Check for task-related inputs
             if (TryProcessTaskInput(input)) return false;
+
+            // Check for quiz commands
+            if (input.Contains("quiz") || input.Contains("game") || input.Contains("test"))
+            {
+                QuizGame.StartQuiz();
+                return false;
+            }
 
             // Process natural language inputs
             return ProcessNaturalLanguage(input);
@@ -166,7 +153,7 @@ namespace CybersecurityAwarenessBot
                 }
                 else
                 {
-                    _renderer.DisplayColoredMessage("Please provide task details in format: 'Add task [title] - [description] - [reminder days]'", ConsoleColor.Yellow);
+                    _renderer.DisplayColoredMessage("Please provide task details in format: 'Add task [title] - [description] - [days]'", ConsoleColor.Yellow);
                 }
             }
             catch
@@ -178,8 +165,6 @@ namespace CybersecurityAwarenessBot
         private bool TryParseTaskCommand(string input, out CyberTask task)
         {
             task = new CyberTask();
-
-            // Pattern 1: "add task Title - Description - 7"
             var addTaskMatch = Regex.Match(input, @"add task (.+?) - (.+?)(?: - (\d+))?$");
             if (addTaskMatch.Success)
             {
@@ -191,26 +176,6 @@ namespace CybersecurityAwarenessBot
                 }
                 return true;
             }
-
-            // Pattern 2: "remind me to [task] every [n] days"
-            var remindMatch = Regex.Match(input, @"remind me to (.+?) every (\d+) days");
-            if (remindMatch.Success)
-            {
-                task.Title = remindMatch.Groups[1].Value.Trim();
-                task.Description = "Recurring reminder";
-                task.ReminderDate = DateTime.Now.AddDays(int.Parse(remindMatch.Groups[2].Value));
-                return true;
-            }
-
-            // Pattern 3: "I need to [task]"
-            var needMatch = Regex.Match(input, @"i need to (.+)");
-            if (needMatch.Success)
-            {
-                task.Title = needMatch.Groups[1].Value.Trim();
-                task.Description = "Task added through conversation";
-                return true;
-            }
-
             return false;
         }
 
@@ -270,13 +235,9 @@ namespace CybersecurityAwarenessBot
                 var task = new CyberTask
                 {
                     Title = match.Groups[1].Value.Trim(),
-                    Description = match.Groups[3].Success ? match.Groups[3].Value.Trim() : "Reminder set through chat"
+                    Description = match.Groups[3].Success ? match.Groups[3].Value.Trim() : "Reminder set through chat",
+                    ReminderDate = match.Groups[2].Success ? DateTime.Now.AddDays(int.Parse(match.Groups[2].Value)) : (DateTime?)null
                 };
-
-                if (match.Groups[2].Success && int.TryParse(match.Groups[2].Value, out int days))
-                {
-                    task.ReminderDate = DateTime.Now.AddDays(days);
-                }
 
                 _tasks.Add(task);
                 _renderer.DisplayColoredMessage($"I'll remind you to {task.Title}", ConsoleColor.Green);
@@ -315,33 +276,6 @@ namespace CybersecurityAwarenessBot
                 {
                     _lastTopic = keyword;
                     _renderer.DisplayColoredMessage(_keywordResponses[keyword], ConsoleColor.White);
-
-                    if (input.Contains("interested"))
-                    {
-                        _favoriteTopic = keyword;
-                        _renderer.DisplayColoredMessage($"I'll remember you're interested in {keyword}!", ConsoleColor.Green);
-                    }
-
-                    return false;
-                }
-            }
-
-            // Check for follow-up requests
-            if (input.Contains("more") && !string.IsNullOrEmpty(_lastTopic))
-            {
-                if (_topicFollowUps.ContainsKey(_lastTopic))
-                {
-                    _renderer.DisplayColoredMessage($"More about {_lastTopic}: {_topicFollowUps[_lastTopic]}", ConsoleColor.White);
-                    return false;
-                }
-            }
-
-            // Check for casual conversation
-            foreach (var casual in _casualResponses)
-            {
-                if (input.Contains(casual.Key))
-                {
-                    _renderer.DisplayColoredMessage(casual.Value, ConsoleColor.Cyan);
                     return false;
                 }
             }
@@ -357,8 +291,18 @@ namespace CybersecurityAwarenessBot
                 }
             }
 
+            // Check casual conversation
+            foreach (var casual in _casualResponses)
+            {
+                if (input.Contains(casual.Key))
+                {
+                    _renderer.DisplayColoredMessage(casual.Value, ConsoleColor.Cyan);
+                    return false;
+                }
+            }
+
             // Default response
-            _renderer.DisplayColoredMessage("I'm not sure I understand. Type 'help' to see what I can do.", ConsoleColor.Yellow);
+            _renderer.DisplayColoredMessage("I'm not sure I understand. Try typing 'help' to see what I can do.", ConsoleColor.Yellow);
             return false;
         }
 
@@ -383,6 +327,11 @@ namespace CybersecurityAwarenessBot
             // Sentiment Analysis
             _renderer.DisplayColoredMessage("\n😊 SENTIMENT ANALYSIS:", ConsoleColor.Green);
             _renderer.DisplayColoredMessage("Try phrases like: \"I'm worried about hackers\" or \"This is frustrating\"", ConsoleColor.White);
+
+            // Quiz Game
+            _renderer.DisplayColoredMessage("\n🎮 QUIZ GAME:", ConsoleColor.Green);
+            _renderer.DisplayColoredMessage("- Start quiz: \"start quiz\" or \"test my knowledge\"", ConsoleColor.White);
+            _renderer.DisplayColoredMessage("- Answer by typing numbers (1, 2, etc.)", ConsoleColor.White);
 
             // Additional Features
             _renderer.DisplayColoredMessage("\n✨ OTHER FEATURES:", ConsoleColor.Green);

@@ -1,0 +1,189 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\inputprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|solutionrelative:inputprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\prog6221poepart2\\cybersecurityawarenessbotgui\\quizgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|solutionrelative:quizgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\prog6221poepart2\\cybersecurityawarenessbotgui\\knowledgebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|solutionrelative:knowledgebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\prog6221poepart2\\cybersecurityawarenessbotgui\\quizquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|solutionrelative:quizquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\guirenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|solutionrelative:guirenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\cybertask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|solutionrelative:cybertask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\audioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|solutionrelative:audioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\iresponserenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45A1532A-080C-44B9-856C-36D10A05BA36}|CybersecurityAwarenessBotGUI.csproj|solutionrelative:iresponserenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QuizGame.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\QuizGame.cs",
+              "RelativeDocumentMoniker": "QuizGame.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\QuizGame.cs",
+              "RelativeToolTip": "QuizGame.cs",
+              "ViewState": "AgIAAB8AAAAAODMzMzP9vzUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T20:06:25.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "QuizQuestion.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\QuizQuestion.cs",
+              "RelativeDocumentMoniker": "QuizQuestion.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\QuizQuestion.cs",
+              "RelativeToolTip": "QuizQuestion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T20:03:11.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAYwGMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T13:49:27.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KnowledgeBase.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\KnowledgeBase.cs",
+              "RelativeDocumentMoniker": "KnowledgeBase.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\KnowledgeBase.cs",
+              "RelativeToolTip": "KnowledgeBase.cs",
+              "ViewState": "AgIAAHIAAAAAnZmZmZkKwIgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T14:21:02.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IResponseRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\IResponseRenderer.cs",
+              "RelativeDocumentMoniker": "IResponseRenderer.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\IResponseRenderer.cs",
+              "RelativeToolTip": "IResponseRenderer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T14:20:18.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InputProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\InputProcessor.cs",
+              "RelativeDocumentMoniker": "InputProcessor.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\InputProcessor.cs",
+              "RelativeToolTip": "InputProcessor.cs",
+              "ViewState": "AgIAABkBAADgAAAAAAAtwDIBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T14:19:25.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GUIRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\GUIRenderer.cs",
+              "RelativeDocumentMoniker": "GUIRenderer.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\GUIRenderer.cs",
+              "RelativeToolTip": "GUIRenderer.cs",
+              "ViewState": "AgIAACYAAAAAMzMzMzMLwDsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T14:10:09.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AudioService.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\AudioService.cs",
+              "RelativeDocumentMoniker": "AudioService.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\AudioService.cs",
+              "RelativeToolTip": "AudioService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T14:07:39.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CyberTask.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\CyberTask.cs",
+              "RelativeDocumentMoniker": "CyberTask.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\CyberTask.cs",
+              "RelativeToolTip": "CyberTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T13:51:25.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\PROG6221POEPart2\\CybersecurityAwarenessBotGUI\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-24T13:49:28.797Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
