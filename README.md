@@ -7,7 +7,7 @@ Cybersecurity Awareness Chatbot (WPF GUI)
 Final Summative Project – PROG6221 - ST10446648
 
 
-Youtube Link: https://youtu.be/Cmfb-I3nfjk
+Youtube Link: https: https://youtu.be/Ilpaz-m3cic 
 
 🎯 What’s the purpose of this project?
 
