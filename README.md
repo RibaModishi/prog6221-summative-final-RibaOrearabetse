@@ -6,6 +6,9 @@
 Cybersecurity Awareness Chatbot (WPF GUI)
 Final Summative Project – PROG6221 - ST10446648
 
+
+Youtube Link: https://youtu.be/Cmfb-I3nfjk
+
 🎯 What’s the purpose of this project?
 
 The aim of this project is to build a simple but smart chatbot that helps South African users become more aware of online threats. The chatbot answers questions about topics like phishing, passwords, malware, VPNs, and more. It also includes fun features like a cybersecurity quiz, task reminders, and a system that understands natural language (even if you don’t type in perfect commands).
