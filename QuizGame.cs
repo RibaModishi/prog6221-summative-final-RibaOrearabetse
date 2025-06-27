@@ -1,54 +1,109 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows;
+using CybersecurityAwarenessBot;
 
-namespace CybersecurityAwarenessBot
+public class QuizGame
 {
-    public class QuizGame
+    private readonly IResponseRenderer _renderer;
+    public List<QuizQuestion> Questions { get; }
+    private int _currentQuestionIndex = -1;
+    private int _score;
+    private bool _isQuizActive = false;
+
+    private readonly Action _onQuizEnd;
+    private readonly Action<QuizQuestion> _onQuestionDisplay;
+    private readonly Action<string> _onFeedbackDisplay;
+    private readonly Action<string> _onFinalResultDisplay;
+
+    public int CurrentQuestionNumber => _currentQuestionIndex + 1;
+    public bool IsActive => _isQuizActive;
+
+    public QuizGame(
+        IResponseRenderer renderer,
+        List<QuizQuestion> questions,
+        Action onQuizEnd,
+        Action<QuizQuestion> onQuestionDisplay,
+        Action<string> onFeedbackDisplay,
+        Action<string> onFinalResultDisplay)
     {
-        private readonly IResponseRenderer _renderer;
-        public List<QuizQuestion> Questions { get; }
-        private int _score = 0;
+        _renderer = renderer;
+        Questions = questions;
+        _onQuizEnd = onQuizEnd;
+        _onQuestionDisplay = onQuestionDisplay;
+        _onFeedbackDisplay = onFeedbackDisplay;
+        _onFinalResultDisplay = onFinalResultDisplay;
+    }
 
-        public QuizGame(IResponseRenderer renderer, List<QuizQuestion> questions)
+    public void StartQuiz()
+    {
+        _currentQuestionIndex = 0;
+        _score = 0;
+        _isQuizActive = true;
+        _onQuestionDisplay?.Invoke(Questions[_currentQuestionIndex]);
+    }
+
+    public void NextQuestion()
+    {
+        _currentQuestionIndex++;
+
+        if (_currentQuestionIndex < Questions.Count)
         {
-            _renderer = renderer;
-            Questions = questions;
+            _onQuestionDisplay?.Invoke(Questions[_currentQuestionIndex]);
+        }
+        else
+        {
+            EndQuiz();
+        }
+    }
+
+    public void CheckAnswer(int selectedOptionIndex)
+    {
+        if (!_isQuizActive) return;
+
+        var question = Questions[_currentQuestionIndex];
+        string feedback;
+
+        if (selectedOptionIndex == question.CorrectAnswerIndex)
+        {
+            _score++;
+            feedback = $"✅ Correct! {question.Explanation}";
+            _renderer.DisplayColoredMessage(feedback, ConsoleColor.Green);
+        }
+        else
+        {
+            feedback = $"❌ Incorrect. The correct answer was: {question.Options[question.CorrectAnswerIndex]}.\n{question.Explanation}";
+            _renderer.DisplayColoredMessage(feedback, ConsoleColor.Red);
         }
 
-        public void StartQuiz()
+        _onFeedbackDisplay?.Invoke(feedback);
+
+        // Delay and move to next question
+        Task.Delay(2000).ContinueWith(_ =>
         {
-            _score = 0;
-            _renderer.DisplayColoredMessage("\n📝 Cybersecurity Quiz Started!", ConsoleColor.Magenta);
-            _renderer.DisplayColoredMessage("Answer with numbers 1-4", ConsoleColor.Cyan);
-        }
+            Application.Current.Dispatcher.Invoke(() => NextQuestion());
+        });
+    }
 
-        public void ProcessAnswer(int selectedOption, int questionIndex)
-        {
-            var question = Questions[questionIndex];
-            bool isCorrect = selectedOption == question.CorrectAnswerIndex;
+    public void EndQuiz()
+    {
+        _isQuizActive = false;
+        double percentage = (_score * 100.0) / Questions.Count;
 
-            if (isCorrect)
-            {
-                _score++;
-                _renderer.DisplayColoredMessage($"✓ {question.CorrectFeedback}", ConsoleColor.Green);
-            }
-            else
-            {
-                _renderer.DisplayColoredMessage($"✗ {question.IncorrectFeedback}", ConsoleColor.Red);
-            }
-        }
+        string feedback;
+        if (percentage >= 80)
+            feedback = "🎉 Excellent! You're a cybersecurity pro!";
+        else if (percentage >= 60)
+            feedback = "👍 Good job! You're getting there!";
+        else
+            feedback = "📚 Keep practicing to improve your security knowledge!";
 
-        public void EndQuiz()
-        {
-            double percentage = (_score * 100) / Questions.Count;
-            _renderer.DisplayColoredMessage($"\nQuiz Complete! Score: {_score}/{Questions.Count}", ConsoleColor.Magenta);
+        string result = $"🏁 Quiz complete!\nScore: {_score}/{Questions.Count} ({percentage:0}%)\n{feedback}";
 
-            if (percentage >= 80)
-                _renderer.DisplayColoredMessage("Cyber Security Expert! 🎉", ConsoleColor.Green);
-            else if (percentage >= 50)
-                _renderer.DisplayColoredMessage("Good start! Keep learning.", ConsoleColor.Yellow);
-            else
-                _renderer.DisplayColoredMessage("Review cybersecurity basics to stay safe.", ConsoleColor.Red);
-        }
+        _renderer.DisplayColoredMessage(result, ConsoleColor.Yellow);
+        _onFeedbackDisplay?.Invoke(""); // Clear question feedback
+        _onFinalResultDisplay?.Invoke(result);
+        _onQuizEnd?.Invoke();
     }
 }

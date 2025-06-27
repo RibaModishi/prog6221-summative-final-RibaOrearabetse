@@ -1,5 +1,6 @@
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\obj\Debug\CybersecurityAwarenessBotGUI.csproj.AssemblyReference.cache
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\obj\Debug\MainWindow.baml
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\obj\Debug\App.baml
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\obj\Debug\MainWindow.g.cs
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\obj\Debug\App.g.cs
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\obj\Debug\CybersecurityAwarenessBotGUI_MarkupCompile.cache
@@ -10,7 +11,11 @@ C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwa
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\CybersecurityAwarenessBotGUI.exe.config
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\CybersecurityAwarenessBotGUI.exe
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\CybersecurityAwarenessBotGUI.pdb
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\ControlzEx.dll
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\MahApps.Metro.dll
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\MaterialDesignColors.dll
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\Microsoft.Xaml.Behaviors.dll
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\NAudio.Asio.dll
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\NAudio.Core.dll
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\NAudio.dll
@@ -20,7 +25,14 @@ C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwa
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\NAudio.WinMM.dll
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\System.Security.AccessControl.dll
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\ControlzEx.pdb
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\ControlzEx.xml
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\MahApps.Metro.pdb
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\MahApps.Metro.xml
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\MaterialDesignColors.pdb
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\NAudio.xml
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\NAudio.Asio.xml
 C:\Users\lab_services_student\OneDrive\Desktop\PROG6221POEPart2\CybersecurityAwarenessBotGUI\bin\Debug\NAudio.Core.xml
